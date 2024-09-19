@@ -1,0 +1,77 @@
+Código completo e funcional que demonstra como trabalhar com arquivos em Java. Ele inclui leitura e escrita de arquivos usando classes como `File`, `FileWriter`, `FileReader`, `BufferedWriter`, `BufferedReader` e também trata exceções associadas a operações de I/O.
+
+### Código: Manipulação de Arquivos
+
+```java
+import java.io.*;
+
+public class ExemploTrabalharComArquivos {
+
+    public static void main(String[] args) {
+        String nomeArquivo = "exemplo.txt";
+        
+        // Escreve no arquivo
+        escreverNoArquivo(nomeArquivo, "Esta é uma linha de texto no arquivo.\n");
+        escreverNoArquivo(nomeArquivo, "Esta é a segunda linha de texto no arquivo.\n");
+
+        // Lê o conteúdo do arquivo
+        lerArquivo(nomeArquivo);
+    }
+
+    // Método para escrever no arquivo
+    public static void escreverNoArquivo(String nomeArquivo, String conteudo) {
+        // O bloco try-with-resources fecha automaticamente o arquivo após o uso
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo, true))) {
+            writer.write(conteudo);
+            System.out.println("Texto escrito no arquivo: " + conteudo);
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo: " + e.getMessage());
+        }
+    }
+
+    // Método para ler o conteúdo do arquivo
+    public static void lerArquivo(String nomeArquivo) {
+        // O bloco try-with-resources fecha automaticamente o arquivo após o uso
+        try (BufferedReader reader = new BufferedReader(new FileReader(nomeArquivo))) {
+            String linha;
+            System.out.println("\nConteúdo do arquivo:");
+            while ((linha = reader.readLine()) != null) {
+                System.out.println(linha);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+        }
+    }
+}
+```
+
+### Explicação do Código:
+
+1. **Escrita no Arquivo (`escreverNoArquivo`)**:
+   - **`FileWriter`**: Usado para escrever no arquivo. Se o arquivo não existir, ele será criado automaticamente.
+   - **`BufferedWriter`**: Usado para melhorar o desempenho da escrita. O `true` no construtor do `FileWriter` permite a escrita no modo de **apêndice**, ou seja, o novo conteúdo será adicionado ao final do arquivo.
+   - **Tratamento de Exceções**: Usa `try-catch` para capturar possíveis erros durante a escrita, como problemas com permissões de arquivos ou diretórios.
+
+2. **Leitura do Arquivo (`lerArquivo`)**:
+   - **`FileReader`**: Usado para ler o conteúdo do arquivo.
+   - **`BufferedReader`**: Usado para ler o arquivo linha por linha de maneira eficiente.
+   - **Tratamento de Exceções**:
+     - **`FileNotFoundException`**: Captura erros se o arquivo não for encontrado.
+     - **`IOException`**: Captura outros erros relacionados à leitura do arquivo.
+
+3. **Try-with-Resources**:
+   - A técnica de **try-with-resources** foi usada para garantir que os arquivos sejam fechados automaticamente após serem usados, evitando vazamento de recursos.
+
+### Funcionalidades:
+- **Escrita no Arquivo**: O método `escreverNoArquivo` permite adicionar texto a um arquivo. Caso o arquivo não exista, ele será criado.
+- **Leitura do Arquivo**: O método `lerArquivo` lê o conteúdo do arquivo e o exibe no console.
+- **Exceções**: O código trata exceções comuns, como arquivo não encontrado (`FileNotFoundException`) ou erros de I/O (`IOException`).
+
+### Teste o Código:
+1. O código criará um arquivo chamado `exemplo.txt` na pasta do seu projeto.
+2. O método `escreverNoArquivo` adiciona linhas ao arquivo.
+3. O método `lerArquivo` lê e exibe o conteúdo do arquivo no console.
+
+Esse exemplo cobre as operações básicas de leitura e escrita de arquivos em Java, e também como tratar exceções associadas a essas operações.
