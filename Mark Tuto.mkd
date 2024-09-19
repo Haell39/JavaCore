@@ -18,18 +18,21 @@ Os cabeçalhos são criados usando o símbolo `#`. O número de hashtags indica 
 ### Formatação de Texto
 
 - **Negrito**: Para deixar o texto em negrito, use dois asteriscos ou dois sublinhados:
+
   ```
   **Texto em negrito**
   __Texto em negrito__
   ```
 
 - **Itálico**: Para itálico, use um asterisco ou um sublinhado:
+
   ```
   *Texto em itálico*
   _Texto em itálico_
   ```
 
 - **Riscado**: Para riscar texto, use duas til (~):
+
   ```
   ~~Texto riscado~~
   ```
@@ -42,6 +45,7 @@ Os cabeçalhos são criados usando o símbolo `#`. O número de hashtags indica 
 ### Listas
 
 - **Listas não ordenadas**: Use asteriscos `*`, sinais de mais `+`, ou hífens `-`:
+
   ```
   * Item 1
   * Item 2
@@ -58,6 +62,7 @@ Os cabeçalhos são criados usando o símbolo `#`. O número de hashtags indica 
 ### Citações
 
 Para criar uma citação, use o sinal de maior `>` no início da linha:
+
 ```
 > Esta é uma citação.
 ```
@@ -65,6 +70,7 @@ Para criar uma citação, use o sinal de maior `>` no início da linha:
 ### Código
 
 - **Código em linha**: Use crases simples `` ` `` para trechos curtos:
+
   ```
   Aqui está um `código`.
   ```
@@ -77,6 +83,7 @@ Para criar uma citação, use o sinal de maior `>` no início da linha:
   ````
 
 Você pode especificar a linguagem para destaque de sintaxe:
+
 ````markdown
 ```python
 def funcao():
@@ -87,11 +94,13 @@ def funcao():
 ### Imagens e Links
 
 - **Imagens**: Use o seguinte formato:
+
 ```
 ![Texto alternativo](URL_da_imagem)
 ```
 
 - **Links**: Para criar links, use:
+
 ```
 [Texto do link](URL)
 ```
@@ -99,7 +108,6 @@ def funcao():
 ## Dicas Adicionais
 
 - **Quebras de linha**: Para uma quebra de linha, adicione dois espaços no final da linha e pressione Enter.
-  
 - **Linhas horizontais**: Crie uma linha horizontal com três ou mais asteriscos `***`, hífens `---`, ou sublinhados `___`.
 
 Markdown é fácil de aprender e usar, permitindo que você crie documentos formatados rapidamente. Pratique criando seus próprios arquivos Markdown para se familiarizar com a sintaxe e suas aplicações[1][2][5][6].
