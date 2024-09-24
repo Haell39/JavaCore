@@ -1,0 +1,107 @@
+### Conceito Teórico de `String` em Java:
+
+A **classe `String`** em Java é usada para representar cadeias de caracteres. É uma das classes mais importantes da linguagem, e ela é **imutável**, o que significa que, uma vez criada, o valor de uma `String` não pode ser alterado. Quando você realiza operações em uma `String`, uma nova instância é criada, em vez de modificar a original.
+
+#### Características importantes de `String`:
+- **Imutabilidade**: Uma vez que uma `String` é criada, ela não pode ser modificada. Qualquer operação que pareça modificar uma `String` na verdade retorna uma nova `String`.
+- **Armazenamento no Pool de Strings**: Para melhorar o desempenho, Java mantém um pool de strings onde ele armazena strings com valores iguais apenas uma vez. Isso economiza memória e melhora a eficiência.
+
+### Exemplo Prático 1: Criando Strings
+Você pode criar uma `String` de várias maneiras:
+
+```java
+public class ExemploString {
+    public static void main(String[] args) {
+        // Criando uma string literal
+        String nome = "Rafael";
+        
+        // Criando uma string usando o operador 'new'
+        String sobrenome = new String("Santos");
+        
+        // Comparando strings
+        if (nome.equals("Rafael")) {
+            System.out.println("Os nomes são iguais.");
+        }
+        
+        // Concatenando strings
+        String nomeCompleto = nome + " " + sobrenome;
+        System.out.println("Nome completo: " + nomeCompleto);
+    }
+}
+```
+
+### Explicação:
+1. **Criando uma String literal**: `String nome = "Rafael";` — Aqui, o valor é armazenado diretamente no pool de strings.
+2. **Usando `new` para criar uma String**: `new String("Santos");` — Essa forma cria um novo objeto na memória, mesmo que exista outra `String` com o mesmo valor.
+3. **Comparação de Strings**: `equals()` é usado para comparar o conteúdo de duas strings.
+
+### Exemplo Prático 2: Manipulação de Strings
+
+```java
+public class ExemploManipulacaoString {
+    public static void main(String[] args) {
+        String texto = "Programação em Java é divertida";
+
+        // Tamanho da string
+        System.out.println("Tamanho: " + texto.length());
+
+        // Substring (pegar parte da string)
+        System.out.println("Parte da string: " + texto.substring(16));
+
+        // Substituir parte da string
+        String novaFrase = texto.replace("divertida", "incrível");
+        System.out.println("Nova frase: " + novaFrase);
+
+        // Converter para maiúsculas
+        System.out.println("Maiúsculas: " + texto.toUpperCase());
+
+        // Verificar se contém uma palavra
+        if (texto.contains("Java")) {
+            System.out.println("O texto contém 'Java'.");
+        }
+    }
+}
+```
+
+### Explicação:
+1. **`length()`**: Retorna o tamanho da string.
+2. **`substring()`**: Extrai uma parte da string com base nos índices.
+3. **`replace()`**: Substitui uma parte da string por outra.
+4. **`toUpperCase()`**: Converte a string para maiúsculas.
+5. **`contains()`**: Verifica se uma string contém uma determinada sequência de caracteres.
+
+### Exemplo Prático 3: Comparando Strings
+
+```java
+public class ExemploComparacaoString {
+    public static void main(String[] args) {
+        String a = "Java";
+        String b = "Java";
+        String c = new String("Java");
+
+        // Comparando referências (==)
+        System.out.println("a == b: " + (a == b)); // True, pois referem-se ao mesmo objeto no pool
+        System.out.println("a == c: " + (a == c)); // False, pois c é um novo objeto
+
+        // Comparando conteúdo (equals)
+        System.out.println("a.equals(b): " + a.equals(b)); // True, conteúdo é igual
+        System.out.println("a.equals(c): " + a.equals(c)); // True, conteúdo é igual
+    }
+}
+```
+
+### Explicação:
+- **Comparação de referências (`==`)**: Quando você usa `==`, está comparando se as referências de memória dos objetos são as mesmas.
+- **Comparação de conteúdo (`equals()`)**: Usa-se `equals()` para comparar o conteúdo das strings, ou seja, se os valores são iguais, mesmo que sejam objetos diferentes.
+
+### Conceitos Adicionais:
+- **Imutabilidade**: Como as strings são imutáveis, operações como concatenação criam novas strings em vez de modificar a original.
+- **Métodos úteis**:
+  - `trim()`: Remove espaços no início e no final da string.
+  - `split()`: Divide a string em partes com base em um delimitador.
+
+### Dicas para a Prova:
+- Entenda a diferença entre comparar strings com `==` e `equals()`.
+- Pratique manipulação de strings com métodos como `substring()`, `replace()`, `toUpperCase()`, e `contains()`.
+- Esteja familiarizado com a imutabilidade das strings e como isso afeta o desempenho (especialmente em loops que manipulam strings).
+
