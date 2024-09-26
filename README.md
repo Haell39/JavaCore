@@ -1,2 +1,2 @@
-# Java_Pro
- For more proffessional and Academics works
+# JavaTech
+ For more Proffessional and Academics works
