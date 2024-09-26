@@ -1,0 +1,124 @@
+Encapsulamento é outro dos pilares da Programação Orientada a Objetos (POO). Ele envolve **esconder os detalhes internos de uma classe** e permitir que ela seja manipulada apenas por métodos públicos. Isso ajuda a proteger os dados de acesso direto e permite que você controle como os atributos são modificados.
+
+### **Motivo para Usar Encapsulamento:**
+- **Segurança:** Protege os dados de alterações inesperadas ou inválidas.
+- **Controle:** Acessos aos atributos de uma classe só ocorrem através de métodos de controle, conhecidos como **getters** e **setters**.
+- **Modularidade:** Facilita mudanças futuras na implementação sem afetar outras partes do código.
+
+### **Exemplo de Encapsulamento em Java:**
+
+#### **Passo 1: Criando a Classe `Pessoa` com Atributos Privados**
+Aqui temos uma classe `Pessoa` com três atributos: `nome`, `idade`, e `cpf`. Esses atributos são marcados como `private`, o que significa que não podem ser acessados diretamente de fora da classe.
+
+```java
+public class Pessoa {
+    // Atributos privados (não podem ser acessados diretamente)
+    private String nome;
+    private int idade;
+    private String cpf;
+
+    // Construtor
+    public Pessoa(String nome, int idade, String cpf) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cpf = cpf;
+    }
+
+    // Métodos Getter e Setter para controlar o acesso
+
+    // Método Getter para obter o nome
+    public String getNome() {
+        return nome;
+    }
+
+    // Método Setter para modificar o nome
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    // Método Getter para obter a idade
+    public int getIdade() {
+        return idade;
+    }
+
+    // Método Setter para modificar a idade (com validação)
+    public void setIdade(int idade) {
+        if (idade >= 0) {
+            this.idade = idade;
+        } else {
+            System.out.println("Idade inválida!");
+        }
+    }
+
+    // Método Getter para obter o CPF
+    public String getCpf() {
+        return cpf;
+    }
+
+    // Método Setter para modificar o CPF
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+}
+```
+
+#### **Passo 2: Usando Encapsulamento na Classe `Main`**
+Agora, vamos usar a classe `Pessoa` e mostrar como os dados são acessados e modificados **somente** através dos métodos `getter` e `setter`.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criando um objeto da classe Pessoa
+        Pessoa pessoa = new Pessoa("Rafael", 25, "123.456.789-00");
+
+        // Acessando os dados da pessoa usando métodos Getter
+        System.out.println("Nome: " + pessoa.getNome());
+        System.out.println("Idade: " + pessoa.getIdade());
+        System.out.println("CPF: " + pessoa.getCpf());
+
+        // Modificando os dados da pessoa usando métodos Setter
+        pessoa.setNome("Carlos");
+        pessoa.setIdade(30);
+        pessoa.setCpf("987.654.321-00");
+
+        // Tentando definir uma idade inválida
+        pessoa.setIdade(-5);  // Não altera a idade porque a validação falha
+
+        // Verificando os dados atualizados
+        System.out.println("Nome atualizado: " + pessoa.getNome());
+        System.out.println("Idade atualizada: " + pessoa.getIdade());
+        System.out.println("CPF atualizado: " + pessoa.getCpf());
+    }
+}
+```
+
+### **Explicando o Encapsulamento:**
+1. **Atributos Privados:** Na classe `Pessoa`, os atributos `nome`, `idade` e `cpf` são privados. Isso significa que **não podem ser acessados diretamente de fora da classe**. 
+    - Exemplo de **tentativa inválida**: `pessoa.nome = "Carlos";` (Esse código daria um erro de compilação).
+
+2. **Getters e Setters:** Para acessar e modificar esses atributos, usamos métodos públicos chamados **getters** (para obter o valor de um atributo) e **setters** (para alterar o valor de um atributo).
+    - `getNome()` retorna o valor do atributo `nome`.
+    - `setNome()` modifica o valor de `nome`.
+
+3. **Validação com Setter:** O método `setIdade()` inclui uma validação que impede que a idade seja definida como um valor negativo. Isso é um exemplo de **controle** que o encapsulamento oferece, pois protege o atributo de receber dados inválidos.
+
+    ```java
+    public void setIdade(int idade) {
+        if (idade >= 0) {
+            this.idade = idade;
+        } else {
+            System.out.println("Idade inválida!");
+        }
+    }
+    ```
+
+### **Por que usar Encapsulamento?**
+1. **Proteção de dados:** Ao manter os atributos privados, você evita que outras partes do programa os alterem de maneira não controlada.
+2. **Validação:** Com os setters, você pode implementar **validações** antes de modificar os atributos, garantindo que apenas dados válidos sejam aceitos.
+3. **Manutenção facilitada:** Se você precisar alterar a maneira como os atributos são armazenados ou processados no futuro, pode fazer isso sem alterar o código que depende da classe. As outras partes do código interagem apenas com os métodos públicos (`getters` e `setters`), não com os atributos diretamente.
+
+### **Resumo:**
+- **Encapsulamento** é a técnica de proteger os dados (atributos) de uma classe, permitindo que eles sejam acessados ou modificados apenas através de métodos controlados (getters e setters).
+- Isso garante segurança, controle e modularidade no código, tornando-o mais robusto e fácil de manter.
+
+Se precisar de mais exemplos ou quiser entender algum outro conceito, estou à disposição!
