@@ -1,0 +1,173 @@
+### **Laços de Repetição, Condicionais, Operações Aritméticas e Constantes em Java**
+
+Aqui estão explicações teóricas e exemplos práticos para cada um dos tópicos solicitados:
+
+---
+
+## 1. **Laços de Repetição (Loops)**
+
+### Teoria:
+Os laços de repetição permitem executar um bloco de código múltiplas vezes, com base em uma condição. Java suporta três tipos principais de loops:
+
+- **`for`**: Usado quando o número de iterações é conhecido.
+- **`while`**: Executa enquanto a condição for verdadeira.
+- **`do-while`**: Semelhante ao `while`, mas garante que o bloco seja executado pelo menos uma vez.
+
+### Exemplo Prático:
+
+```java
+public class ExemploLacosRepeticao {
+    public static void main(String[] args) {
+        // Loop 'for'
+        System.out.println("Usando for:");
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Contagem: " + i);
+        }
+
+        // Loop 'while'
+        System.out.println("\nUsando while:");
+        int j = 0;
+        while (j < 5) {
+            System.out.println("Contagem: " + j);
+            j++;
+        }
+
+        // Loop 'do-while'
+        System.out.println("\nUsando do-while:");
+        int k = 0;
+        do {
+            System.out.println("Contagem: " + k);
+            k++;
+        } while (k < 5);
+    }
+}
+```
+
+### Explicação:
+- **`for`**: O loop `for` é ideal quando o número de iterações é conhecido. Aqui ele conta de 0 a 4.
+- **`while`**: Continua rodando enquanto a condição for verdadeira. Neste exemplo, ele também conta de 0 a 4.
+- **`do-while`**: Executa o bloco pelo menos uma vez, depois verifica a condição.
+
+---
+
+## 2. **Condicionais**
+
+### Teoria:
+Condicionais são usadas para tomar decisões no código, permitindo a execução de diferentes blocos dependendo de certas condições. Java oferece:
+
+- **`if-else`**: Verifica uma condição e executa o bloco correspondente.
+- **`switch`**: Permite testar uma variável contra várias opções.
+
+### Exemplo Prático:
+
+```java
+public class ExemploCondicionais {
+    public static void main(String[] args) {
+        int num = 5;
+
+        // Usando if-else
+        if (num > 0) {
+            System.out.println("Número positivo");
+        } else if (num < 0) {
+            System.out.println("Número negativo");
+        } else {
+            System.out.println("Número é zero");
+        }
+
+        // Usando switch
+        char letra = 'A';
+        switch (letra) {
+            case 'A':
+                System.out.println("Letra é A");
+                break;
+            case 'B':
+                System.out.println("Letra é B");
+                break;
+            default:
+                System.out.println("Outra letra");
+        }
+    }
+}
+```
+
+### Explicação:
+- **`if-else`**: Permite verificar múltiplas condições e escolher o bloco adequado. Aqui, ele testa se o número é positivo, negativo ou zero.
+- **`switch`**: Avalia a variável `letra` e executa o bloco correspondente ao seu valor.
+
+---
+
+## 3. **Operações Aritméticas**
+
+### Teoria:
+Java suporta as operações aritméticas básicas, incluindo:
+
+- **Adição** (`+`)
+- **Subtração** (`-`)
+- **Multiplicação** (`*`)
+- **Divisão** (`/`)
+- **Módulo** (`%`): Retorna o resto da divisão.
+
+### Exemplo Prático:
+
+```java
+public class ExemploOperacoesAritmeticas {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 3;
+
+        System.out.println("Adição: " + (a + b));
+        System.out.println("Subtração: " + (a - b));
+        System.out.println("Multiplicação: " + (a * b));
+        System.out.println("Divisão: " + (a / b));  // Resultado inteiro
+        System.out.println("Divisão com ponto flutuante: " + ((double) a / b));  // Divisão precisa
+        System.out.println("Módulo: " + (a % b));  // Resto da divisão
+    }
+}
+```
+
+### Explicação:
+- **`+`, `-`, `*`, `/`, `%`**: Java suporta as operações aritméticas básicas.
+- **Divisão com ponto flutuante**: Para obter um valor decimal preciso, é necessário converter um dos operandos para `double`.
+
+---
+
+## 4. **Constantes**
+
+### Teoria:
+Uma constante é uma variável cujo valor não pode ser alterado depois de atribuído. Em Java, usamos o modificador **`final`** para definir constantes.
+
+### Exemplo Prático:
+
+```java
+public class ExemploConstantes {
+    // Constante PI
+    public static final double PI = 3.14159;
+
+    public static void main(String[] args) {
+        double raio = 5.0;
+
+        // Calcula a área de um círculo
+        double area = PI * raio * raio;
+
+        System.out.println("Área do círculo: " + area);
+    }
+}
+```
+
+### Explicação:
+- **`final`**: Quando uma variável é declarada como `final`, ela se torna uma constante e seu valor não pode ser alterado.
+- O exemplo calcula a área de um círculo usando a constante `PI`.
+
+---
+
+### Conclusão:
+
+Esses exemplos cobrem os conceitos de laços de repetição, condicionais, operações aritméticas e constantes em Java. Cada um desses conceitos é essencial para escrever programas eficientes e bem estruturados.
+
+### Dicas para a Prova:
+- **Laços de repetição**: Certifique-se de saber quando usar `for`, `while`, e `do-while`.
+- **Condicionais**: Domine a estrutura de `if-else` e `switch` para tomar decisões no código.
+- **Operações Aritméticas**: Pratique operações básicas e entenda como funciona o operador de módulo (`%`).
+- **Constantes**: Use `final` para garantir que valores importantes no seu programa não sejam alterados acidentalmente.
+
+Se precisar de mais ajuda com esses conceitos, estou à disposição!

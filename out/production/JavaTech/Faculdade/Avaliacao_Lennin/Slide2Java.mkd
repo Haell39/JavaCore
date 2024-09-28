@@ -1,0 +1,293 @@
+### Teoria e Exemplos Práticos do PDF: Aula 02 - POO
+
+#### **1. Estruturas de Decisão:**
+As estruturas de decisão permitem ao programa tomar decisões com base em condições. Existem duas principais estruturas de decisão em Java: `if/else` e `switch`.
+
+- **If/Else:**
+  - **Teoria:** Avalia uma expressão booleana. Se for verdadeira, executa o bloco de código do `if`; se falsa, executa o bloco do `else`.
+  - **Exemplo Prático:**
+    ```java
+    int idade = 20;
+    if (idade >= 18) {
+        System.out.println("Você é maior de idade.");
+    } else {
+        System.out.println("Você é menor de idade.");
+    }
+    ```
+
+- **If/Else-If:**
+  - **Teoria:** Permite testar múltiplas condições em sequência.
+  - **Exemplo Prático:**
+    ```java
+    int nota = 85;
+    if (nota >= 90) {
+        System.out.println("Aprovado com excelência.");
+    } else if (nota >= 60) {
+        System.out.println("Aprovado.");
+    } else {
+        System.out.println("Reprovado.");
+    }
+    ```
+
+- **Switch:**
+  - **Teoria:** Usado para avaliar uma expressão que pode resultar em múltiplos valores e executar o código correspondente ao valor.
+  - **Exemplo Prático:**
+    ```java
+    int dia = 2;
+    switch (dia) {
+        case 1:
+            System.out.println("Domingo");
+            break;
+        case 2:
+            System.out.println("Segunda-feira");
+            break;
+        default:
+            System.out.println("Outro dia");
+    }
+    ```
+
+#### **2. Estruturas de Controle:**
+Permitem repetir blocos de código com base em condições. Existem três estruturas principais: `while`, `do/while`, e `for`.
+
+- **While:**
+  - **Teoria:** Usada quando não se sabe quantas vezes o loop será repetido. A condição é verificada no início.
+  - **Exemplo Prático:**
+    ```java
+    int i = 0;
+    while (i < 5) {
+        System.out.println(i);
+        i++;
+    }
+    ```
+
+- **Do/While:**
+  - **Teoria:** Semelhante ao `while`, mas garante que o bloco de código será executado ao menos uma vez.
+  - **Exemplo Prático:**
+    ```java
+    int i = 0;
+    do {
+        System.out.println(i);
+        i++;
+    } while (i < 5);
+    ```
+
+- **For:**
+  - **Teoria:** Usado quando se sabe antecipadamente o número de repetições.
+  - **Exemplo Prático:**
+    ```java
+    for (int i = 0; i < 5; i++) {
+        System.out.println(i);
+    }
+    ```
+
+#### **3. Operadores:**
+Os operadores realizam operações em variáveis e valores. Existem operadores aritméticos, relacionais, lógicos, unários e ternários.
+
+- **Operadores Aritméticos:**
+  - **Teoria:** Usados para realizar cálculos matemáticos como adição, subtração, multiplicação, divisão e módulo.
+  - **Exemplo Prático:**
+    ```java
+    int a = 10, b = 5;
+    int soma = a + b;  // 15
+    int subtracao = a - b;  // 5
+    int multiplicacao = a * b;  // 50
+    int divisao = a / b;  // 2
+    int modulo = a % b;  // 0
+    ```
+
+- **Operadores Relacionais:**
+  - **Teoria:** Comparações entre variáveis que retornam valores booleanos (`true` ou `false`).
+  - **Exemplo Prático:**
+    ```java
+    int x = 10, y = 20;
+    System.out.println(x > y);  // false
+    System.out.println(x < y);  // true
+    ```
+
+- **Operadores Lógicos:**
+  - **Teoria:** Combinam expressões booleanas.
+  - **Exemplo Prático:**
+    ```java
+    boolean resultado = (x > 5) && (y < 30);  // true
+    ```
+
+- **Operadores Unários:**
+  - **Teoria:** Operam em apenas um operando, como o incremento (`++`) e o decremento (`--`).
+  - **Exemplo Prático:**
+    ```java
+    int z = 10;
+    z++;  // 11
+    z--;  // 10
+    ```
+
+- **Operador Ternário:**
+  - **Teoria:** Substitui o `if-else` simples com uma expressão curta.
+  - **Exemplo Prático:**
+    ```java
+    int nota = 75;
+    String resultado = (nota >= 60) ? "Aprovado" : "Reprovado";
+    System.out.println(resultado);
+    ```
+
+#### **4. Entrada e Saída (System.out e Scanner):**
+
+- **System.out:**
+  - **Teoria:** `System.out` é a saída padrão para exibir dados no console. Ele oferece métodos como `print()`, `println()` e `printf()` para formatar a saída.
+  - **Exemplo Prático:**
+    ```java
+    System.out.println("Bem-vindo ao Java!");
+    System.out.print("Este texto fica na mesma linha.");
+    System.out.printf("O valor de PI é: %.2f", 3.1416);
+    ```
+
+- **Scanner:**
+  - **Teoria:** A classe `Scanner` facilita a entrada de dados via console, permitindo ler diversos tipos de dados (inteiros, strings, etc.).
+  - **Exemplo Prático:**
+    ```java
+    import java.util.Scanner;
+
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Digite seu nome: ");
+    String nome = scanner.nextLine();
+    System.out.println("Olá, " + nome);
+    
+    System.out.print("Digite sua idade: ");
+    int idade = scanner.nextInt();
+    System.out.println("Você tem " + idade + " anos.");
+    ```
+
+#### **5. Exercícios Propostos no PDF:**
+- **Exemplo 1:**
+  - Programa que lê nome e idade:
+    ```java
+    import java.util.Scanner;
+
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Digite seu nome: ");
+            String nome = scanner.nextLine();
+            System.out.print("Digite sua idade: ");
+            int idade = scanner.nextInt();
+            System.out.println("Olá " + nome + ". Você tem " + idade + " anos!");
+        }
+    }
+    ```
+
+- **Exemplo 2:**
+  - Programa que realiza operações com dois números inteiros:
+    ```java
+    import java.util.Scanner;
+
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Digite o primeiro número: ");
+            int num1 = scanner.nextInt();
+            System.out.print("Digite o segundo número: ");
+            int num2 = scanner.nextInt();
+
+            System.out.println("Soma: " + (num1 + num2));
+            System.out.println("Subtração: " + (num1 - num2));
+            System.out.println("Multiplicação: " + (num1 * num2));
+            System.out.println("Divisão: " + (num1 / num2));
+        }
+    }
+    ```
+
+- **Exemplo 3:**
+  - Programa que encontra o maior de cinco números:
+    ```java
+    import java.util.Scanner;
+
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int maior = Integer.MIN_VALUE;
+
+            for (int i = 0; i < 5; i++) {
+                System.out.print("Digite um número: ");
+                int num = scanner.nextInt();
+                if (num > maior) {
+                    maior = num;
+                }
+            }
+
+            System.out.println("O maior número é: " + maior);
+        }
+    }
+    ```
+
+Vamos completar com os tópicos que faltaram: `foreach`, `break`, `continue` e `return`.
+
+### **1. Foreach:**
+O `foreach` é uma variação simplificada do loop `for` introduzida a partir da versão 5 do Java, usada principalmente para percorrer **arrays** e **coleções**.
+
+- **Teoria:** Ao contrário do `for` tradicional, que exige inicialização, condição e incremento, o `foreach` simplifica o código ao apenas especificar a variável que vai receber cada elemento e a coleção ou array que será percorrido.
+  
+- **Exemplo Prático:**
+    ```java
+    int[] numeros = {1, 2, 3, 4, 5};
+    
+    for (int numero : numeros) {
+        System.out.println(numero);
+    }
+    ```
+    - Nesse exemplo, o loop `foreach` percorre o array `numeros` e imprime cada elemento.
+
+### **2. Break:**
+O comando `break` é usado para **interromper** a execução de um loop (`for`, `while`, `do-while`) ou de uma instrução `switch`.
+
+- **Teoria:** Quando o `break` é executado, o controle do programa sai imediatamente do loop ou da estrutura condicional, não executando mais nenhum comando a seguir dentro do bloco.
+
+- **Exemplo Prático:**
+    ```java
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            break;  // Sai do loop quando i for igual a 5
+        }
+        System.out.println(i);
+    }
+    ```
+    - O loop é interrompido assim que `i` atinge 5, imprimindo apenas os números de 0 a 4.
+
+### **3. Continue:**
+O comando `continue` é usado para **pular** a iteração atual de um loop e voltar para a próxima, sem sair do loop.
+
+- **Teoria:** Quando o `continue` é encontrado, o restante das instruções na iteração atual é ignorado e o loop continua com a próxima iteração.
+
+- **Exemplo Prático:**
+    ```java
+    for (int i = 0; i < 10; i++) {
+        if (i % 2 == 0) {
+            continue;  // Pula os números pares
+        }
+        System.out.println(i);
+    }
+    ```
+    - Aqui, o `continue` faz com que os números pares sejam ignorados, imprimindo apenas os números ímpares de 1 a 9.
+
+### **4. Return:**
+O comando `return` é usado para **encerrar** a execução de um método e, se o método tiver um tipo de retorno, ele também **retorna um valor** ao método que o chamou.
+
+- **Teoria:** O `return` é obrigatório em métodos que não sejam do tipo `void`. Ele pode retornar um valor que será usado pela função que invocou o método.
+
+- **Exemplo Prático:**
+    ```java
+    public static int soma(int a, int b) {
+        return a + b;  // Retorna a soma de a e b
+    }
+
+    public static void main(String[] args) {
+        int resultado = soma(5, 3);
+        System.out.println("Resultado: " + resultado);  // Exibe 8
+    }
+    ```
+    - Neste exemplo, o método `soma` retorna o valor da soma dos dois números, e esse valor é impresso no método `main`.
+
+### **Resumo dos Comandos:**
+- **Foreach:** Facilita a iteração em arrays e coleções.
+- **Break:** Interrompe a execução de loops ou `switch`.
+- **Continue:** Pula para a próxima iteração do loop.
+- **Return:** Encerra a execução de um método e, opcionalmente, retorna um valor.
+
