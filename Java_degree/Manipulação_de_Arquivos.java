@@ -7,8 +7,8 @@ public class Manipulação_de_Arquivos {
         String nomeArquivo = "exemplo.txt";
         
         // Escreve no arquivo
-        escreverNoArquivo(nomeArquivo, "Esta é uma linha de texto no arquivo.\n");
-        escreverNoArquivo(nomeArquivo, "Esta é a segunda linha de texto no arquivo.\n");
+        escreverNoArquivo(nomeArquivo, "Esta eh uma linha de texto no arquivo.\n");
+        escreverNoArquivo(nomeArquivo, "Esta eh a segunda linha de texto no arquivo.\n");
 
         // Lê o conteúdo do arquivo
         lerArquivo(nomeArquivo);
