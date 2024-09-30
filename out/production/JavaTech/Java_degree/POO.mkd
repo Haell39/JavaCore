@@ -1,0 +1,195 @@
+Código completo e funcional que demonstra conceitos avançados de Programação Orientada a Objetos (POO) em Java. Ele cobre os seguintes conceitos:
+
+1. **Herança**
+2. **Polimorfismo**
+3. **Interfaces**
+4. **Classes Abstratas**
+5. **Padrões de Projeto (Factory)**
+
+### Código: POO Avançada
+
+```java
+// Classe abstrata para representar veículos
+abstract class Veiculo {
+    private String marca;
+    private String modelo;
+
+    public Veiculo(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    // Método abstrato, deve ser implementado pelas subclasses
+    public abstract void acelerar();
+
+    // Método concreto que pode ser sobrescrito pelas subclasses
+    public void parar() {
+        System.out.println("O veículo está parando.");
+    }
+}
+
+// Classe Carro que herda de Veiculo
+class Carro extends Veiculo {
+    private int portas;
+
+    public Carro(String marca, String modelo, int portas) {
+        super(marca, modelo);
+        this.portas = portas;
+    }
+
+    public int getPortas() {
+        return portas;
+    }
+
+    @Override
+    public void acelerar() {
+        System.out.println("O carro está acelerando.");
+    }
+
+    @Override
+    public void parar() {
+        System.out.println("O carro está parando.");
+    }
+}
+
+// Classe Moto que herda de Veiculo
+class Moto extends Veiculo {
+    private boolean temCarenagem;
+
+    public Moto(String marca, String modelo, boolean temCarenagem) {
+        super(marca, modelo);
+        this.temCarenagem = temCarenagem;
+    }
+
+    public boolean isTemCarenagem() {
+        return temCarenagem;
+    }
+
+    @Override
+    public void acelerar() {
+        System.out.println("A moto está acelerando.");
+    }
+}
+
+// Interface
+interface Conduzivel {
+    void conduzir();
+}
+
+// Classe abstrata que implementa a interface Conduzivel
+abstract class Condutor implements Conduzivel {
+    private String nome;
+
+    public Condutor(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public abstract void conduzir();
+}
+
+// Classe que implementa Condutor para Motoristas
+class Motorista extends Condutor {
+    public Motorista(String nome) {
+        super(nome);
+    }
+
+    @Override
+    public void conduzir() {
+        System.out.println(getNome() + " está conduzindo um veículo.");
+    }
+}
+
+// Classe que implementa Condutor para Pilotos
+class Piloto extends Condutor {
+    public Piloto(String nome) {
+        super(nome);
+    }
+
+    @Override
+    public void conduzir() {
+        System.out.println(getNome() + " está pilotando uma moto.");
+    }
+}
+
+// Padrão Factory para criar veículos
+class VeiculoFactory {
+    public static Veiculo criarVeiculo(String tipo, String marca, String modelo) {
+        switch (tipo.toLowerCase()) {
+            case "carro":
+                return new Carro(marca, modelo, 4);
+            case "moto":
+                return new Moto(marca, modelo, true);
+            default:
+                throw new IllegalArgumentException("Tipo de veículo desconhecido.");
+        }
+    }
+}
+
+public class POOAvancada {
+    public static void main(String[] args) {
+        // Usando herança e polimorfismo
+        Veiculo carro = new Carro("Toyota", "Corolla", 4);
+        Veiculo moto = new Moto("Honda", "CBR", true);
+
+        carro.acelerar();
+        moto.acelerar();
+
+        carro.parar();
+        moto.parar();
+
+        // Usando a interface e polimorfismo
+        Conduzivel motorista = new Motorista("João");
+        Conduzivel piloto = new Piloto("Maria");
+
+        motorista.conduzir();
+        piloto.conduzir();
+
+        // Usando o padrão Factory para criar objetos
+        Veiculo veiculo1 = VeiculoFactory.criarVeiculo("carro", "Ford", "Fiesta");
+        Veiculo veiculo2 = VeiculoFactory.criarVeiculo("moto", "Yamaha", "YZF-R1");
+
+        System.out.println("\nVeículos criados pelo Factory:");
+        System.out.println(veiculo1.getMarca() + " " + veiculo1.getModelo());
+        System.out.println(veiculo2.getMarca() + " " + veiculo2.getModelo());
+    }
+}
+```
+
+### Explicação do Código:
+
+1. **Herança**:
+   - A classe abstrata `Veiculo` é herdada pelas classes `Carro` e `Moto`. Cada uma implementa o método abstrato `acelerar` de forma diferente.
+
+2. **Polimorfismo**:
+   - O polimorfismo é mostrado quando usamos o mesmo método `acelerar` e `parar`, mas ele se comporta de forma diferente dependendo do tipo de veículo (carro ou moto).
+   - Também é aplicado na interface `Conduzivel`, onde tanto `Motorista` quanto `Piloto` implementam o método `conduzir` de maneiras diferentes.
+
+3. **Interfaces**:
+   - A interface `Conduzivel` é implementada por duas classes: `Motorista` e `Piloto`. Cada uma implementa o método `conduzir` de acordo com sua especialidade (motorista conduz carro, piloto conduz moto).
+
+4. **Classes Abstratas**:
+   - A classe `Veiculo` é abstrata, o que significa que ela não pode ser instanciada diretamente. Ela serve como base para que as classes `Carro` e `Moto` herdem e implementem os detalhes específicos.
+
+5. **Padrão Factory (Factory Pattern)**:
+   - O `VeiculoFactory` é uma implementação do padrão de projeto **Factory**, que permite criar objetos sem expor a lógica de criação para o cliente. Ele decide qual objeto criar com base no tipo de veículo passado como parâmetro.
+
+### Funcionalidades:
+- **Herança**: Reaproveitamento de código comum nas classes `Carro` e `Moto`, que herdam da classe `Veiculo`.
+- **Polimorfismo**: O mesmo método (`acelerar`, `parar`) se comporta de maneira diferente dependendo da classe que o implementa.
+- **Interfaces**: `Conduzivel` define uma interface comum para `Motorista` e `Piloto`.
+- **Classes Abstratas**: `Veiculo` é uma classe abstrata que serve de base para outros tipos de veículos.
+- **Padrão Factory**: Facilita a criação de diferentes tipos de veículos sem precisar saber detalhes de implementação.
+
+Esse exemplo cobre os principais conceitos avançados de POO em Java, como herança, polimorfismo, interfaces, classes abstratas e o padrão de projeto Factory.

@@ -1,0 +1,73 @@
+O polimorfismo é um dos pilares da Programação Orientada a Objetos (POO), e em Java, ele permite que você trate objetos de diferentes classes de maneira uniforme, principalmente quando essas classes são relacionadas por herança. Isso significa que um método pode se comportar de maneiras diferentes, dependendo do objeto que o chama.
+
+Vou te explicar com um exemplo prático:
+
+### **Exemplo de Polimorfismo em Java:**
+
+Imagine que temos uma **superclasse** chamada `Animal`, que define um método comum a todos os animais, chamado `som()`. Cada animal faz um som diferente, então as **subclasses** (como `Cachorro` e `Gato`) vão sobrescrever esse método para fornecer a sua própria implementação.
+
+#### **Passo 1: Criando a Superclasse `Animal`:**
+A classe `Animal` é a classe base que define o método `som()` como um comportamento geral para todos os animais.
+
+```java
+// Classe Superclasse (Animal)
+public class Animal {
+    public void som() {
+        System.out.println("O animal faz um som.");
+    }
+}
+```
+
+#### **Passo 2: Criando as Subclasses `Cachorro` e `Gato`:**
+Agora, vamos criar as classes `Cachorro` e `Gato` que herdam de `Animal` e sobrescrevem o método `som()` com seu próprio comportamento.
+
+```java
+// Subclasse Cachorro
+public class Cachorro extends Animal {
+    @Override
+    public void som() {
+        System.out.println("O cachorro late.");
+    }
+}
+
+// Subclasse Gato
+public class Gato extends Animal {
+    @Override
+    public void som() {
+        System.out.println("O gato mia.");
+    }
+}
+```
+
+#### **Passo 3: Usando o Polimorfismo:**
+Agora, o conceito de polimorfismo entra em ação. Podemos usar uma **referência da superclasse `Animal`** para armazenar objetos das subclasses (`Cachorro` e `Gato`). Isso permite que você chame o método `som()` em diferentes tipos de animais, sem precisar saber especificamente que tipo de animal está usando.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Polimorfismo em ação
+        Animal meuAnimal = new Animal();  // Objeto da classe Animal
+        Animal meuCachorro = new Cachorro();  // Objeto da classe Cachorro
+        Animal meuGato = new Gato();  // Objeto da classe Gato
+
+        meuAnimal.som();  // "O animal faz um som."
+        meuCachorro.som();  // "O cachorro late."
+        meuGato.som();  // "O gato mia."
+    }
+}
+```
+
+### **O Que Está Acontecendo?**
+- No exemplo acima, temos três variáveis (`meuAnimal`, `meuCachorro`, e `meuGato`), todas do tipo `Animal`, mas cada uma está armazenando uma instância de uma classe diferente.
+- Quando chamamos `meuCachorro.som()`, mesmo que a variável seja do tipo `Animal`, o método sobrescrito na classe `Cachorro` é chamado (o cachorro late). O mesmo vale para o gato.
+
+### **Por que usar Polimorfismo?**
+1. **Flexibilidade:** Você pode tratar diferentes tipos de objetos de maneira uniforme. No exemplo, não precisamos ter variáveis ou métodos separados para cada tipo de animal. Podemos chamar o método `som()` independentemente do tipo de animal.
+  
+2. **Código mais limpo e manutenível:** Você não precisa usar estruturas condicionais (como `if` ou `switch`) para verificar o tipo do objeto e decidir qual comportamento executar. O comportamento correto é escolhido automaticamente, com base no tipo real do objeto.
+
+3. **Extensibilidade:** Se no futuro você quiser adicionar mais tipos de animais, como `Passaro`, basta criar uma nova subclasse que herda de `Animal` e sobrescrever o método `som()`, sem modificar o código existente.
+
+### **Resumo:**
+O polimorfismo permite que o mesmo método (`som()` neste caso) tenha comportamentos diferentes dependendo do tipo de objeto que o invoca. Isso torna seu código mais flexível, fácil de manter e escalável.
+
