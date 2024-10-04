@@ -1,2 +1,2 @@
 # JavaTech
- For more Proffessional and Academics works
+ For more Proffessional and Academic works
