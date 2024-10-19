@@ -10,6 +10,7 @@ public class AppLauncher {
                 // displaytthe weather app gui
                 new WeatherAppGui().setVisible(true);
             }
+            
         });
     }
 }
