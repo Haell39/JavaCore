@@ -52,8 +52,30 @@ public class WeatherAppGui extends JFrame {
         searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         searchButton.setBounds(375,13,47,45);
         add(searchButton);
-    }
 
+        // weather image
+        JLabel weatherConditionImage = new JLabel(loadImage("WeatherApp/Assets/cloudy.png"));
+        weatherConditionImage.setBounds(0,125,450,217);
+        add(weatherConditionImage);
+
+        // temperature text
+        JLabel teperatureText = new JLabel("10 Cº");
+        teperatureText.setBounds(0,350,450,54);
+        teperatureText.setFont(new Font("Dialog", Font.BOLD, 48));
+
+        // Center text
+        teperatureText.setHorizontalAlignment(SwingUtilities.CENTER);
+        add(teperatureText);
+
+        // weather condition description
+        JLabel weatherConditionDesc = new JLabel("Cloudy");
+        weatherConditionDesc.setBounds(0,405,450,36);
+        weatherConditionDesc.setFont(new Font("Dialog", Font.PLAIN, 32));
+        weatherConditionDesc.setHorizontalAlignment(SwingUtilities.CENTER);
+        add(weatherConditionDesc);
+
+    }
+    // used to create images in our gui components
     private ImageIcon loadImage(String resourcePath){
         try {
             // read the img file from the path given
