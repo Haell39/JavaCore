@@ -76,6 +76,7 @@ public class WeatherAppGui extends JFrame {
 
     }
     // used to create images in our gui components
+
     private ImageIcon loadImage(String resourcePath){
         try {
             // read the img file from the path given
