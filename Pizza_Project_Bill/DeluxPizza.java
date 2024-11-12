@@ -1,0 +1,18 @@
+package Pizza_Project_Bill;
+
+public class DeluxPizza extends Pizza {
+
+    public DeluxPizza(Boolean veg) {
+        super(veg);
+        super.addExtraCheese();
+        super.addExtraToppings();
+    }
+
+    @Override
+    public void addExtraToppings() {
+    }
+
+    @Override
+    public void addExtraCheese() {
+    }
+}
