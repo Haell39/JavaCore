@@ -1,2 +1,2 @@
 # JavaTech
- For more Proffessional and Academic works
+Repositório para estudos mais avançados e alguns mini projetos em JAVA
