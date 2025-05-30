@@ -5,13 +5,13 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Escolha a operação (+, -, *, /, ^):");
+        System.out.println("Escolha a operação (+, -, *, /):");
         String operacao = scanner.nextLine();
 
         double resultado = 0;
         boolean primeiroNumero = true;
 
-        System.out.println("Digite números (ou 'out' para sair e vê o resultado. Se for exponenciação digite a base e depois o expoente):");
+        System.out.println("Digite números (ou 'out' para sair e vê o resultado):");
         while (true) {
             String entrada = scanner.nextLine();
             if (entrada.equalsIgnoreCase("out")) {
@@ -39,9 +39,6 @@ public class Calculator {
                                 continue;
                             }
                             resultado /= numero;
-                            break;
-                        case "^":
-                            resultado = Math.pow(resultado, numero);
                             break;
                         default:
                             System.out.println("Operação inválida.");
