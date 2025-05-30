@@ -8,7 +8,19 @@ public class Pessoa {
     private String email;
     private String telefone;
     private int CEP;
+
+    
+
+
+
+    public Pessoa() {
+        this.nome = nome;
+
+
+    }
 }
+
+
 
 class Aluno extends  Pessoa {
 
