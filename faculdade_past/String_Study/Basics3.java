@@ -1,4 +1,4 @@
-package Faculdade.String_Study;
+package atividade_Diogenes.String_Study;
 
 public class Basics3 {
     public static void main(String[] args) {

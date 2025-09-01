@@ -1,4 +1,4 @@
-package Faculdade.TestClass;
+package atividade_Diogenes.TestClass;
 
 public class PessoaTest {
     public static void main(String[] args) {

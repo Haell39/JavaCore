@@ -1,7 +1,6 @@
-package Faculdade.String_Study;
+package atividade_Diogenes.String_Study;
 
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class Basics4 {
     public static void main(String[] args) {

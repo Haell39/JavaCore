@@ -1,4 +1,4 @@
-package Faculdade.TestClass;
+package atividade_Diogenes.TestClass;
 
 public class Pessoa {
     // atributos private para proteger os dados

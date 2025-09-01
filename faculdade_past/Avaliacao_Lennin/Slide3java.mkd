@@ -16,7 +16,7 @@
 1. **length():** Retorna o número de caracteres da String.
    - **Exemplo Prático:**
      ```java
-     String texto = "Faculdade";
+     String texto = "atividade_Diogenes";
      System.out.println(texto.length());  // 9
      ```
 

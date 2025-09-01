@@ -1,4 +1,4 @@
-package Faculdade.TestClass;
+package atividade_Diogenes.TestClass;
 import java.util.Scanner;
 
 public class Calculator {
