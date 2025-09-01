@@ -1,4 +1,4 @@
-package Faculdade.ConssencionariaDiogenes;
+package atividade_Diogenes.ConssencionariaDiogenes;
 
 public class Moto extends Veiculo {
     private final boolean partidaEletrica;

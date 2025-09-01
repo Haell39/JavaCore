@@ -1,4 +1,4 @@
-package Faculdade.EletronicosDiogenes;
+package atividade_Diogenes.EletronicosDiogenes;
 
 public abstract class Dispositivo {
     protected String marca;

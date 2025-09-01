@@ -1,4 +1,4 @@
-package Faculdade.EletronicosDiogenes;
+package atividade_Diogenes.EletronicosDiogenes;
 
 public class Televisao extends Dispositivo {
     public Televisao(String marca, String modelo) {

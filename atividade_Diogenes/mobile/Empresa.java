@@ -1,4 +1,4 @@
-package Faculdade.mobile;
+package atividade_Diogenes.mobile;
 
 // Classe Abstrata
 abstract class Funcionario {

@@ -1,4 +1,4 @@
-package Faculdade.ConssencionariaDiogenes;
+package atividade_Diogenes.ConssencionariaDiogenes;
 
 public class Caminhao extends Veiculo {
     private final double capacidadeCarga;

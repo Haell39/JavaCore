@@ -1,4 +1,4 @@
-package Faculdade.EletronicosDiogenes;
+package atividade_Diogenes.EletronicosDiogenes;
 
 public class TesteDispositivos {
     public static void main(String[] args) {

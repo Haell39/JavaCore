@@ -1,4 +1,4 @@
-package Faculdade.TestClass;
+package atividade_Diogenes.TestClass;
 
 public class Login {
     private String usuario;

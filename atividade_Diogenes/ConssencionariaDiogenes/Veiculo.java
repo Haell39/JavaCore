@@ -1,4 +1,4 @@
-package Faculdade.ConssencionariaDiogenes;
+package atividade_Diogenes.ConssencionariaDiogenes;
 
 public abstract class Veiculo {
     protected String marca;

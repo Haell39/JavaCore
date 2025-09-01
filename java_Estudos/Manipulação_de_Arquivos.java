@@ -1,4 +1,4 @@
-package Java_degree;
+package java_Estudos;
 import java.io.*;
 
 public class Manipulação_de_Arquivos {

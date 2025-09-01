@@ -1,4 +1,4 @@
-package Java_degree;
+package java_Estudos;
 
 // Classe abstrata para representar veículos
 abstract class Veiculo {

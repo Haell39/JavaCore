@@ -1,4 +1,4 @@
-package Faculdade.ConssencionariaDiogenes;
+package atividade_Diogenes.ConssencionariaDiogenes;
 
 public class TesteVeiculos {
     public static void main(String[] args) {

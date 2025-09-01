@@ -1,4 +1,4 @@
-package Faculdade.EletronicosDiogenes;
+package atividade_Diogenes.EletronicosDiogenes;
 
 public class Smartphone extends Dispositivo {
     public Smartphone(String marca, String modelo) {

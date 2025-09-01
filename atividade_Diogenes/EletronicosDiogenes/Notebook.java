@@ -1,4 +1,4 @@
-package Faculdade.EletronicosDiogenes;
+package atividade_Diogenes.EletronicosDiogenes;
 
 public class Notebook extends Dispositivo {
     public Notebook(String marca, String modelo) {

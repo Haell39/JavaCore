@@ -13,7 +13,7 @@
 - **Classe String:** Em Java, **String** não é um tipo primitivo, mas uma classe que possui suporte especial. Mesmo sendo uma classe, pode ser usada como se fosse um tipo primitivo.
   - **Declaração de String:**
     ```java
-    String nome = "Faculdade Imaculada Conceição de Recife";
+    String nome = "atividade_Diogenes Imaculada Conceição de Recife";
     ```
   - Strings são **imutáveis**, o que significa que uma vez criadas, seu valor não pode ser alterado. Para modificar uma String, cria-se um novo objeto.
 

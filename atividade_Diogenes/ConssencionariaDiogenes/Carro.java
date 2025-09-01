@@ -1,4 +1,4 @@
-package Faculdade.ConssencionariaDiogenes;
+package atividade_Diogenes.ConssencionariaDiogenes;
 
 public class Carro extends Veiculo {
     private final int portas;
