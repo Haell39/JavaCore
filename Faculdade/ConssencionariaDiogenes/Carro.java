@@ -1,4 +1,4 @@
-package Faculdade.ExercicioFeliz;
+package Faculdade.ConssencionariaDiogenes;
 
 public class Carro extends Veiculo {
     private final int portas;

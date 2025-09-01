@@ -1,4 +1,4 @@
-package Faculdade.ExercicioFeliz;
+package Faculdade.ConssencionariaDiogenes;
 
 public class Caminhao extends Veiculo {
     private final double capacidadeCarga;

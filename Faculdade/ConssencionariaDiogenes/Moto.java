@@ -1,4 +1,4 @@
-package Faculdade.ExercicioFeliz;
+package Faculdade.ConssencionariaDiogenes;
 
 public class Moto extends Veiculo {
     private final boolean partidaEletrica;
