@@ -54,7 +54,3 @@ public class Calculator {
         scanner.close();
     }
 }
-
-// Testes
-
-@test
